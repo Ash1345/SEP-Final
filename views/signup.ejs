@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Signup Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="/css/signup.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="headline">
+      <h1>Welcome. We exist to make entrepreneurship easier.</h1>
+    </div>
+    <form class="form" method="POST" action="/api/v1/signup">
+      <div class="signup">
+        <div class="form-group">
+          <input type="text" placeholder="First Name" name="firstName" />
+        </div>
+
+        <div class="form-group">
+          <input type="text" placeholder="Last Name" name="lastName" />
+        </div>
+
+        <div class="form-group">
+          <input type="number" placeholder="Age" name="age" />
+        </div>
+
+        <div class="form-group">
+          <select name="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Others">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <input type="email" placeholder="Email" name="email" />
+        </div>
+
+        <div class="form-group">
+          <input type="password" placeholder="Password" name="password" />
+        </div>
+
+        <button type="submit" class="btn">SIGN UP</button>
+        <div class="account-exist">
+          Already have an account? <a href="/api/v1/login" id="login">Login</a>
+        </div>
+      </div>
+    </form>
+
+
+  </div>
+
+
+</body>
+
+</html>

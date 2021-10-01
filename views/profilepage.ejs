@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/css/profilepage.css">
+   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"></script>
+   <script src="/javascript/profile.js"></script>
+   <script src="https://kit.fontawesome.com/d2f76bf8f3.js" crossorigin="anonymous"></script>
+   <title>Profile Page</title>
+</head>
+
+<body>
+   <div class="picture">
+      <img class="image" src="" alt="User">
+   </div>
+    
+   
+   <div class="container">       
+      <div class="edit">
+         <button class="pen"> <i class="fas fa-pen"></i>  Edit Profile</button>        
+      </div>
+      <div class="name">
+         <h1 class="fnt">
+            <%= user.firstName + user.lastName %>
+         </h1>
+      </div>
+
+      <div class="icons">
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+      </div>
+
+      <div class="bio">
+         <p>
+            <%= user.bio %>
+         </p>
+      </div>
+
+      <div id="cont">
+         <div class="Basic-Info">
+            <div class="xyz">
+               <h2><i class="fas fa-info-circle"></i> Basic-Info</h2>
+
+            </div>
+            <div class="s1">
+               <div class="is1">
+                  <p>Full Name</p>
+               </div>
+               <div class="is2">
+                  <p>
+                     <%= user.firstName %>
+                        <%=user.lastName %>
+                  </p>
+               </div>
+            </div>
+            <div class="s2">
+               <div class="is3">
+                  <p>Gender</p>
+               </div>
+               <div class="is4">
+                  <p>
+                     <%= user.gender %>
+                  </p>
+               </div>
+            </div>
+            <div class="s3">
+               <div class="is4">
+                  <p>Email</p>
+               </div>
+               <div class="is5">
+                  <p>
+                     <%= user.email %>
+                  </p>
+               </div>
+            </div>
+            <div class="s4">
+               <div class="is6">
+                  <p>Age</p>
+               </div>
+               <div class="is7">
+                  <p>
+                     <%= user.age %>
+                  </p>
+               </div>
+            </div>
+
+         </div>
+
+         <div class="Education">
+            <div class="course">
+               <h2><i class="fas fa-book-reader"></i> Education</h2>
+               <button class="add action2"><i class="fas fa-plus"></i></button>
+            </div>
+
+            <div class="main info2">
+                  <!-- <%if(user.matriculation){%> -->
+                     <div class="info3">
+                  
+
+                        <%if(user.matriculation){%>
+                            <div class="innerflex">
+                              <p>
+                                 <%=user.matriculation.schoolName %>
+                              </p>
+                              <p>
+                                 <%=user.matriculation.totalPercentage%>
+                              </p>
+                           </div>
+                           
+                    
+                                 
+                           <%}%>
+                     
+                  </div>
+                    
+                  <!-- <%}%> -->
+                  <!-- <%if(user.intermediate){%> -->
+                     <div class="info3">
+                        <%if(user.intermediate){%>
+
+                      
+                            <div class="innerflex">
+                              <p>
+                                 <%=user.intermediate.schoolName %>
+                              </p>
+                              <p>
+                                 <%=user.intermediate.totalPercentage%>
+                              </p>
+                           </div>
+                           
+                    
+                                 
+                     
+                           <%}%>
+                  </div>
+                    
+                  <!-- <%}%> -->
+               
+              <div class="info3"> 
+               <% if(user.graduation){ %>
+                  <% user.graduation.forEach(graduation=>{ %>
+                     <div class="innerflex">
+                     <p class="text2 select5">
+                        <%=graduation.collegeName%>
+                           <%= graduation.sem%>
+                     </p>
+                     <p class="value2 select6">
+                        <%=graduation.cgpa%>
+                     </p>
+                     </div>
+                     <% }) %>
+               <% } %>
+                  </div>
+            </div>
+
+         </div>
+
+
+
+         <div class="Skills">
+            <div class="course">
+               <h2><i class="fas fa-brain"></i> Skills</h2>
+               <button class="add action3"><i class="fas fa-plus"></i></button>
+            </div>
+
+            <div>
+               <div class="info3">
+                  
+
+                     <%if(user.skills){%>
+                        <% user.skills.forEach(skills=>{%>
+                         <div class="innerflex">
+                           <p>
+                              <%=skills.title %>
+                           </p>
+                           <p>
+                              <%=skills.link %>
+                           </p>
+                        </div>
+                           <%})%>
+                              <% }%>
+                 
+                              
+                  
+                  <!-- <% if(user.skills){ %>
+                     <% user.skills.forEach(function(skills){ %>
+                        <a href="<%=skills.link %>" target="_blank" class="value3"><i class="fas fa-link"></i></a>
+                        <% }) %>
+                           <% } %> -->
+               </div>
+
+            </div>
+
+         </div>
+
+         <div class="rR">
+            <div class="course">
+               <h2><i class="fas fa-trophy"></i> Achievement and Responsibilites</h2>
+               <button class="add action4"><i class="fas fa-plus"></i></button>
+            </div>
+            <div class="block">
+
+
+               <% if(user.achievements){ %>
+                  <% user.achievements.forEach(achievements=>{ %>
+                     <p class="text3">
+                        <%=achievements.title %>
+                     </p>
+                     <p class="value3">
+                        <%=achievements.description%>
+                     </p>
+                     <% }) %>
+                        <% } %>
+
+                           <!-- <% if(user.achievements){ %>
+                              <% user.achievements.forEach(achievements=>{ %>
+                                 
+                                 <p class="value3">
+                                    <%=achievements.description%>
+                                 </p>
+                                 <% }) %>
+                                    <% } %> -->
+
+            </div>
+
+         </div>
+      </div>
+
+
+   </div>
+</body>
+
+
+</html>

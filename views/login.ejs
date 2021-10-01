@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Login Form</title>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="form-container log-in-container">
+            <form method="POST" action="/api/v1/login">
+                <h1>STUDENT EMPOWERMENT PORTAL</h1>
+
+                <span>LOGIN </span>
+                <input type="email" placeholder="Email" name='email' />
+                <input type="password" placeholder="Password" id="myInput" name='password'>
+                <input type="checkbox" onclick="myFunction()">Show Password
+                <a href="#">Forgot your password?</a>
+                <button type="submit">Log In</button>
+                <a href="/api/v1/signup"> Sign up</a>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-right">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/javascript/login.js"></script>
+</body>
